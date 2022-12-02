@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{title}}</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+     <div class="row">
+        <div class="cuadro-login">
+          <div class="text-login"> <img src="/images/FINAL.png" alt="Galga joyas LOGO" class="nav-brand" />
+            LOG IN</div>
+          <div class="formulario">
+            <form action="/admin/login" method="post" class="formulario">
+              <p>
+                <label for="usuario">USUARIO <span>*</span></label>
+                <input type="text" name="usuario" class="form-control" id="inputUser" value=""/>
+              </p>
+              <p>
+                <label for="clave" id="labelclave">CLAVE <span>*</span></label>
+                <input type="password" class="form-control" id="inputPassword" name="password" value="">
+              </p>
+              <button id="entrar" type="submit" class="btn essence-btn form-boton">ENTRAR</button>
+            </form>
+            {{#if error}}
+             <p>Usuario y/o contraseña incorrectos</p>
+             {{/if}}
+            
+          </div>
+        </div>
+
+      </div>
+
+
+
+  </body>
+</html>

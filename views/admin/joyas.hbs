@@ -1,0 +1,64 @@
+
+ <link rel='stylesheet' href='/stylesheets/style.css' />
+
+<div class="container" style="margin-top: 50px;">
+  {{!--  fila 2 --}}
+  <div class="barra">
+    <p class="text"> Hola {{usuario}}! </p>
+    <h3>LISTA DE PRODUCTOS
+    </h3>
+    <a class="btn btn-danger" href="/admin/login/logout">Cerrar sesion <i class="fas fa-sing-out-alt"></i></a>
+  </div>
+
+ 
+  {{!--  fila 2 --}}
+      <div class="row">
+        <div class=" col">
+        </div>
+        <div class="col-5 text-end">
+          <a class="btn btn-succes" href="/admin/joyas/agregar"><i class="fa fa-plus" aria-hidden="true"></i>
+          Nuevo</a>
+        </div>
+      </div>
+   {{!-- fin fila 2--}}
+   
+    {{!--fila 3--}}
+    <div class="row">
+        <div class="col">
+            <table class="table table-striped-columns">
+                <thead>
+                    <tr class="table-dark">
+                        <th scope="col">#</th>
+                        
+                        <th scope="col">Titulo</th>
+                        <th scope="col">Descripcion</th>
+                        <th scope="col">Precio</th>
+                        <th scope="col">Imagen</th>
+                        <th class="text-end">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each joyas}}
+                    <tr>
+                        <th scope="row">{{id}}</th>
+                        <td> {{titulo}}</td>
+
+                        <td>{{descripcion}}</td>
+                        <td>{{precio}}</td>
+                        <td>{{{imagen}}}</td>
+                        <td class="text-end">
+                            <a class="btn btn-secondary"  href="/admin/joyas/modificar/{{id}}">
+                                <i class="fa fa-pencil" aria-hidden="true"></i></a>
+                                
+                            <a class="btn btn-secondary" href="/admin/joyas/eliminar/{{id}}">
+                                <i class="fa-solid fa-trash" aria-hidden="true"></i></a>
+
+                        </td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+   </div>
+</div>
+
